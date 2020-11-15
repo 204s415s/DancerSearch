@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{/css/stylesheet.css}" rel="stylesheet">
+    <title>ダンサー詳細</title>
+  </head>
+  <body>
+    <h3>ダンサー詳細</h3>
+    <div class="detail" th:each="data : ${dancer}"> 
+        <table>
+          <tr><th>ダンサー名 : </th><td th:text="${data.name}"/></tr>
+          <tr><th>チーム名 : </th><td th:text="${data.team}"/><tr>
+        </table>
+        <p class="item"> 参考動画 : </p>
+        <p><iframe width="560" height="315" th:src="${data.movie}" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+    </div>
+    <footer>
+      <p>(c)2020 Hashimoto</p>
+    </footer>
+  </body>
+</html>

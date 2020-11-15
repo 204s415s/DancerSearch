@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>レッスン検索</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{/css/stylesheet.css}" rel="stylesheet">
+  </head>
+  <body>
+    <form method="get" name="form1" th:action="@{/index/search}">
+    <h3>レッスン検索</h3>
+      <table class="search">
+        <tr>
+          <th>ダンサー名</th>
+          <td><input type="text" class="form-control" name="dancer" th:value="${dancer}"/></td>
+        </tr>
+        <tr>
+          <th>チーム名</th>
+          <td><input type="text" class="form-control" name="team" th:value="${team}"/></td>
+        </tr>
+        
+        <tr>
+          <th>スタジオ名</th>
+          <td><input type="radio" class="form-control" name="studio" th:value="STUDIO-Ash"/><label for="checkbox">STUDIO-Ash</label>
+              <input type="radio" class="form-control" name="studio" th:value="FRESH+' '+DANCE+' '+STUDIO"/><label for="checkbox">FRESH DANCE STUDIO</label>
+              <input type="radio" class="form-control" name="studio" th:value="STUDIO+' ' +Alleyoop"/><label for="checkbox">STUDIO Alleyoop</label>
+              <input type="radio" class="form-control" name="studio" th:value="DANCE+' '+SCHOOL+' '+LAB3"/><label for="checkbox">DANCE SCHOOL LAB3</label>
+              <input type="radio" class="form-control" name="studio" th:value="STUDIO+' '+AX"/><label for="checkbox">STUDIO AX</label>
+              <br>
+              <input type="radio" class="form-control" name="studio" th:value="E-N+' '+DANCE+' '+SCHOOL+' '+STUDIO"/><label for="checkbox">E-N DANCE SCHOOL STUDIO</label>
+              <input type="radio" class="form-control" name="studio" th:value="STUDIO+' '+SUNNY+' '+HOOD"/><label for="checkbox">STUDIO SUNNY HOOD</label>
+              <input type="radio" class="form-control" name="studio" th:value="CAMURO+' '+DANCE+' '+STUDIO"/><label for="checkbox">CAMURO DANCE STUDIO</label>
+              <input type="radio" class="form-control" name="studio" th:value="DANCE+' '+STUDIO+' '+OSCAR"/><label for="checkbox">DANCE STUDIO OSCAR</label>
+          </td>
+        </tr>
+     
+        <tr>
+          <th>曜日</th>
+          <td><input type="radio" class="form-control" id="week" name="week" th:value="月曜日"/><label for="checkbox">月曜日</label>
+              <input type="radio" class="form-control" id="week" name="week" th:value="火曜日"/><label for="checkbox">火曜日</label>
+              <input type="radio" class="form-control" id="week" name="week" th:value="水曜日"/><label for="checkbox">水曜日</label>
+              <input type="radio" class="form-control" id="week" name="week" th:value="木曜日"/><label for="checkbox">木曜日</label>
+              <input type="radio" class="form-control" id="week" name="week" th:value="金曜日"/><label for="checkbox">金曜日</label>
+              <input type="radio" class="form-control" id="week" name="week" th:value="土曜日"/><label for="checkbox">土曜日</label>
+              <input type="radio" class="form-control" id="week" name="week" th:value="日曜日"/><label for="checkbox">日曜日</label>
+          </td>
+        </tr>
+        
+        <tr>
+          <th>開始時間</th>
+          <td><input list="startFrom" class="form-control" name="startFrom"/>
+              <datalist id="startFrom">
+                <option value="1300"><option value="1400"><option value="1500"><option value="1600"><option value="1700">
+                <option value="1800"><option value="1900"><option value="2000"><option value="2100"><option value="2200"><option value="2300">
+              </datalist>
+               ～ <input list="startTo" class="form-control" name="startTo"/>
+              <datalist id="startTo">
+                <option value="1300"><option value="1400"><option value="1500"><option value="1600"><option value="1700">
+                <option value="1800"><option value="1900"><option value="2000"><option value="2100"><option value="2200"><option value="2300">
+              </datalist>
+          </td>
+        </tr>
+        
+        <tr>
+          <th>終了時間</th>
+          <td><input list="closeFrom" class="form-control" name="closeFrom"/>
+              <datalist id="closeFrom">
+               <option value="1300"><option value="1400"><option value="1500"><option value="1600"><option value="1700">
+               <option value="1800"><option value="1900"><option value="2000"><option value="2100"><option value="2200"><option value="2300">
+              </datalist>
+               ～ <input list="closeTo" class="form-control" name="closeTo"/>
+              <datalist id="closeTo">
+               <option value="1300"><option value="1400"><option value="1500"><option value="1600"><option value="1700">
+               <option value="1800"><option value="1900"><option value="2000"><option value="2100"><option value="2200"><option value="2300">
+              </datalist>
+          </td>
+        </tr>
+        
+        <tr>
+          <th>クラス</th>
+          <td><input type="text" class="form-control" name="level" th:value="${level}"/></td>
+        </tr>
+      </table>
+      <input type="submit" value="検索"/>
+  </form>  
+  <div th:if="${resultSize > 0}"><label th:text="${resultSize}"></label>件</div>
+    
+    <table class="result" th:if="${resultSize > 0}">
+      <tr>
+        <th>ダンサー名</th>
+        <th>スタジオ名</th>
+        <th>曜日</th>
+        <th>時間</th>
+        <th>クラス</th>
+        <th>詳細(外部リンク)</th>
+      </tr>
+      <tr th:each="list : ${result}">
+        <td><a th:text="${list.dance.name}" href="/dancer" th:href="@{/dancer/{dancerCode}(dancerCode=${list.dancerCode})}"></a></td>   
+        <td th:text="${list.studio}"/>
+        <td th:text="${list.week}"/>
+        <td th:text="${list.start} + ' ～ ' + ${list.close}"/>
+        <td th:text="${list.level}"/>
+        <td><a th:href="${list.link}">◆</a></td> 
+      </tr>
+    </table>
+    <footer>
+      <p>(c)2020 Hashimoto</p>
+    </footer>
+  </body>
+</html>

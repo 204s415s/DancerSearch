@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+/*検索条件*/
+.search {
+  border-collapse: collapse;
+}
+.search th {
+  border: solid 1px black;
+  padding: 3px 10px;
+  background: #ffd7cc;
+}
+.search tr {
+  border: solid 1px black;
+}
+
+.search td {
+  border: solid 1px black;
+  padding: 3px 10px;
+}
+
+/*検索結果*/
+.result {
+  border-collapse: collapse;
+}
+.result th {
+  border: solid 1px black;
+  padding: 3px 10px;
+  background: #e6f3ff;
+}
+.result tr {
+  border: solid 1px black;
+}
+.result td {
+  border: solid 1px black;
+  padding: 3px 10px;
+}
+
+/*ダンサー詳細*/
+.detail th {
+	text-align: right;
+}
+.item {
+	font-weight: bold;
+}
+
+/*フッター*/
+footer {
+	font-size: 13px;
+}
