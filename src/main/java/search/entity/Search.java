@@ -17,7 +17,7 @@ import search.entity.Dancer;
 @Table(name="search")
 public class Search {
 	
-	//コードが長くなったため、Lombokの使用を検討していたが、うまく動かなかった
+	//I was considering using Lombok due to the lengthy code, but it didn't work.
 	@Id
 	@Column(name="id")
 	private int id;
@@ -30,7 +30,7 @@ public class Search {
 	
 	@Column(name="dancer_code")
 	private String dancerCode;
-	//dancer_codeカラムでdancerテーブルと関連付け
+	//Associate with dancer table in dancer_code column
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="dancer_code", insertable = false, updatable = false )
 	private Dancer dance;

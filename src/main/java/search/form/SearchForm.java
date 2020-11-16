@@ -2,7 +2,7 @@ package search.form;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-//ŒŸõŒ‹‰Ê‚ğ•Û
+//Keep search results
 public class SearchForm implements Serializable{
 	private static final long serialVersionUID = 1L;
 	

@@ -11,7 +11,7 @@ import org.springframework.util.StringUtils;
 
 import search.entity.Search;
 
-//ŒŸõğŒ‚ğì¬
+//Create search criteria
 public class SearchSpecifications {
 	
 	public static Specification<Search> dancerContains(String dancer) {
@@ -41,7 +41,7 @@ public class SearchSpecifications {
         };
     }
 	
-	//•¡”‘I‘ğ‚ğ‰Â”\‚É‚µ‚½‚©‚Á‚½‚Ì‚¾‚ªA‚¤‚Ü‚­‘‚­‚±‚Æ‚ª‚Å‚«‚È‚©‚Á‚½
+	//I wanted to allow multiple selections, but I couldn't write well
 	public static Specification<Search> weekContains(String week) {
         return StringUtils.isEmpty(week) ? null : new Specification<Search>() {
             @Override

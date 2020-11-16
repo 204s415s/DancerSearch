@@ -32,13 +32,13 @@ public class SearchController {
 	@Autowired
 	public DancerRepository dancerRepository;
 
-	//検索画面
+	//Search screen
     @RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String index() {
 		return "index";
 	}
     
-	//検索結果	
+	//search results	
   	@RequestMapping(value = "/index/search", method = RequestMethod.GET)
 	public ModelAndView search(ModelAndView mav
 			, @RequestParam("dancer") String dancer, @RequestParam("team") String team
@@ -63,7 +63,7 @@ public class SearchController {
 		return mav;
 	}
 
-  	//ダンサー詳細ページ
+  	//Dancer details page
 	@RequestMapping(value="/dancer/{dancerCode}", method = RequestMethod.GET)
 	public ModelAndView dancer(@PathVariable("dancerCode") String dancerCode, @RequestParam(name="name", required=false) String name
 			,@RequestParam(name="team", required=false) String team, @RequestParam(name="movie", required=false) String movie,

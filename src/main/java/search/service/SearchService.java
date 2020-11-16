@@ -23,7 +23,7 @@ public class SearchService {
 	@Autowired
 	DancerRepository dancerRepository;
 	
-	//検索条件を結合する
+	//Combine search criteria
 	public List<Search> findSearch(String dancer, String team, String studio, String week
 			, BigDecimal startFrom, BigDecimal startTo, BigDecimal closeFrom, BigDecimal closeTo, String level) {
 	    return searchRepository.findAll(Specification
@@ -39,7 +39,7 @@ public class SearchService {
 	    );
 	}
 	
-	//dancerテーブルからダンサー詳細に出力する情報を取り出す
+	//Extract dancer detailed output information from the dancer table
 	 public Dancer findById(String dancerCode) {
 		    Optional<Dancer> dancer = dancerRepository.findById(dancerCode);
 		    return dancer.get();

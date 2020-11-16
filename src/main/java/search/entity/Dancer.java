@@ -15,7 +15,7 @@ public class Dancer {
 	@Id
 	@Column(name="dancer_code")
 	private String dancerCode;
-	//dancer_codeカラムでsearchテーブルと関連付け
+	//Associate with search table in dancer_code column
 	@OneToMany(mappedBy="dance")
 	private List<Search> search;
 	public String getDancerCode() {
