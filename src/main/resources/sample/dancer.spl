@@ -1,0 +1,12 @@
+CREATE TABLE `search` (
+  `id` int DEFAULT NULL,
+  `dancer_code` varchar(100) NOT NULL,
+  `dancer` varchar(100) NOT NULL,
+  `team` varchar(100) DEFAULT NULL,
+  `studio` varchar(100) NOT NULL,
+  `week` varchar(100) NOT NULL,
+  `start` int NOT NULL,
+  `close` int NOT NULL,
+  `level` varchar(100) DEFAULT NULL,
+  `link` varchar(256) NOT NULL
+) 
