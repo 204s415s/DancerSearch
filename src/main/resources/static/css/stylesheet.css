@@ -2,12 +2,23 @@
 
 /*PC用*/
 @media screen and (min-device-width: 641px){
+  .form-control {
+    width: auto;
+  }
+  .time-control {
+    width: 100px;
+  }
+  
   /*検索条件*/
   .search {
     border-collapse: collapse;
   }
+  .search label {
+    display: block;
+    float: left;
+  }
   .search table {
-	  width: 100%;
+    width: 100%;
   }
   .search th {
     border: solid 1px black;
@@ -18,7 +29,6 @@
   .search tr {
     border: solid 1px black;
   }
-
   .search td {
     border: solid 1px black;
     padding: 3px 10px;
@@ -43,23 +53,35 @@
 
   /*ダンサー詳細*/
   .detail th {
-  	text-align: right;
+    text-align: right;
   }
   .item {
-  	font-weight: bold;
+    font-weight: bold;
   }
 
   /*フッター*/
   footer {
-  	font-size: 13px;
+    font-size: 13px;
   }
 }
 
-/*スマホ用画面*/
+/*スマホ用*/
 @media screen and (max-device-width: 640px) {
+  .form-control {
+    width: auto;
+    display: block;
+    float: left;
+  }
+  .time-control {
+    width: 100px;
+  }
   /*検索条件*/
+  .search label {
+    display: block;
+    float: left;
+  }
   .search table {
-	width: auto;
+    width: auto;
   }
   .search th {
     border: solid 1px black;
@@ -115,15 +137,15 @@
   
   /*ダンサー詳細*/
   .detail th {
-  	text-align: right;
+    text-align: right;
   }
   .item {
-  	font-weight: bold;
+    font-weight: bold;
   }
 
   /*フッター*/
   footer {
-  	font-size: 13px;
+    font-size: 13px;
   }
 }
 	
