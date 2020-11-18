@@ -1,49 +1,129 @@
 @charset "UTF-8";
 
-/*検索条件*/
-.search {
-  border-collapse: collapse;
-}
-.search th {
-  border: solid 1px black;
-  padding: 3px 10px;
-  background: #ffd7cc;
-}
-.search tr {
-  border: solid 1px black;
+/*PC用*/
+@media screen and (min-device-width: 641px){
+  /*検索条件*/
+  .search {
+    border-collapse: collapse;
+  }
+  .search table {
+	  width: 100%;
+  }
+  .search th {
+    border: solid 1px black;
+    padding: 3px 10px;
+    background: #ffd7cc;
+    width: 80px;
+  }
+  .search tr {
+    border: solid 1px black;
+  }
+
+  .search td {
+    border: solid 1px black;
+    padding: 3px 10px;
+  }
+
+  /*検索結果*/
+  .result {
+    border-collapse: collapse;
+  }
+  .result th {
+    border: solid 1px black;
+    padding: 3px 10px;
+    background: #e6f3ff;
+  }
+  .result tr {
+    border: solid 1px black;
+  }
+  .result td {
+    border: solid 1px black;
+    padding: 3px 10px;
+  }
+
+  /*ダンサー詳細*/
+  .detail th {
+  	text-align: right;
+  }
+  .item {
+  	font-weight: bold;
+  }
+
+  /*フッター*/
+  footer {
+  	font-size: 13px;
+  }
 }
 
-.search td {
-  border: solid 1px black;
-  padding: 3px 10px;
-}
+/*スマホ用画面*/
+@media screen and (max-device-width: 640px) {
+  /*検索条件*/
+  .search table {
+	width: auto;
+  }
+  .search th {
+    border: solid 1px black;
+    padding: 3px 10px;
+    background: #ffd7cc;
+  }
+  .search tr {
+    border: solid 1px black;
+  }
+  .search td {
+    border: solid 1px black;
+    padding: 3px 10px;
+  }
+  .search th,
+  .search td{
+    display: block;
+  }
 
-/*検索結果*/
-.result {
-  border-collapse: collapse;
-}
-.result th {
-  border: solid 1px black;
-  padding: 3px 10px;
-  background: #e6f3ff;
-}
-.result tr {
-  border: solid 1px black;
-}
-.result td {
-  border: solid 1px black;
-  padding: 3px 10px;
-}
+  /*検索結果*/
+  .result table {
+    width: auto;
+  }
+  .result th {
+    display: none;
+  }
+  .result td {
+    border: solid 1px black;
+    padding: 3px 10px;
+    display: block;
+  }
+  .result tr{
+    display: block;
+  }
+  .result td:nth-child(1) {
+    background: #e6f3ff;
+    margin-top:10px;
+  }
+  .result td:nth-child(2) :before {
+    content: 'スタジオ名 : ';
+  }
+  .result td:nth-child(3) :before {
+    content: '曜日 : ';
+  }
+  .result td:nth-child(4) :before {
+    content: '時間 : ';
+  }
+  .result td:nth-child(5) :before {
+    content: 'クラス : ';
+  }
+  .result td:nth-child(6) :before {
+    content: '詳細(外部サイト)';
+  }
+  
+  /*ダンサー詳細*/
+  .detail th {
+  	text-align: right;
+  }
+  .item {
+  	font-weight: bold;
+  }
 
-/*ダンサー詳細*/
-.detail th {
-	text-align: right;
+  /*フッター*/
+  footer {
+  	font-size: 13px;
+  }
 }
-.item {
-	font-weight: bold;
-}
-
-/*フッター*/
-footer {
-	font-size: 13px;
-}
+	
