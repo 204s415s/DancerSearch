@@ -73,8 +73,10 @@ dancerテーブル
 |movie|文字列|動画(Youtube)のリンク|
 
 ## 実行
-MySQLサーバーを起動した状態で、
-`` gradlew bootRun ``
+MySQLサーバーを起動した状態で、  
+```
+gradlew bootRun
+```
 を実行します。  
 http://localhost:8080/index
 
