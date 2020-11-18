@@ -13,6 +13,7 @@ Spring BootとMySQLを用いた、簡単な検索が出来るWebアプリケー�
 ・gradle (version: 6.6.1)  
 ・Spring Tool Suite 4 (Version: 4.8.0.RELEASE)  
 ・Windows10 (64bit)  
+以上の環境で開発・動作確認を行いました。
 
   
 
