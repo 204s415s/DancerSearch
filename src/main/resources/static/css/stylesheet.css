@@ -14,8 +14,7 @@
     border-collapse: collapse;
   }
   .search label {
-    display: block;
-    float: left;
+    white-space: nowrap;
   }
   .search table {
     width: 100%;
@@ -75,8 +74,7 @@
   }
   /*検索条件*/
   .search label {
-    display: block;
-    float: left;
+    white-space: nowrap;
   }
   .search table {
     width: auto;
