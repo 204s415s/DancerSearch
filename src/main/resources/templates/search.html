@@ -82,7 +82,7 @@
       </table>
       <input type="submit" value="検索"/>
   </form>  
-  <div th:if="${resultSize > 0}"><label th:text="${resultSize}"></label>件</div>
+  <div th:if="${resultSize >= 0}"><label th:text="${resultSize}"></label>件</div>
     
     <table class="result" th:if="${resultSize > 0}">
       <tr>
