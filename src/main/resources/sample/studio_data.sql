@@ -1,4 +1,4 @@
-INSERT INTO sample_db.studio (studio_id,studio) VALUES
+INSERT INTO `studio` VALUES
 	 (1,'STUDIO-Ash'),
 	 (2,'FRESH DANCE STUDIO'),
 	 (3,'STUDIO Alleyoop'),
