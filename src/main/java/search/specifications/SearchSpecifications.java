@@ -36,7 +36,7 @@ public class SearchSpecifications {
         return StringUtils.isEmpty(studio) ? null : new Specification<Search>() {
             @Override
             public Predicate toPredicate(Root<Search> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
-                return cb.like(root.get("studio"), "%" + studio + "%");
+                return cb.equal(root.join("studio", JoinType.LEFT).get("studio"), studio);
             }
         };
     }
@@ -46,7 +46,7 @@ public class SearchSpecifications {
         return StringUtils.isEmpty(week) ? null : new Specification<Search>() {
             @Override
             public Predicate toPredicate(Root<Search> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
-                return cb.like(root.get("week"), "%" + week + "%");
+                return cb.equal(root.join("week", JoinType.LEFT).get("week"), week);
             }
         };
     }
