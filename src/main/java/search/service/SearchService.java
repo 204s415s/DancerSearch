@@ -6,8 +6,11 @@ import java.util.Optional;
 
 import search.entity.Dancer;
 import search.entity.Search;
+import search.entity.Week;
 import search.repository.DancerRepository;
 import search.repository.SearchRepository;
+import search.repository.StudioRepository;
+import search.repository.WeekRepository;
 import search.specifications.SearchSpecifications;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +25,10 @@ public class SearchService {
 	SearchRepository searchRepository;
 	@Autowired
 	DancerRepository dancerRepository;
+	@Autowired
+	StudioRepository studioRepository;
+	@Autowired
+	WeekRepository weekRepository;
 	
 	//Combine search criteria
 	public List<Search> findSearch(String dancer, String team, String studio, String week
@@ -44,4 +51,12 @@ public class SearchService {
 		    Optional<Dancer> dancer = dancerRepository.findById(dancerCode);
 		    return dancer.get();
 		  }
+	
+	 public List<Studio> findAllStudio() {
+		 return studioRepository.findAll();
+	 }
+	 
+	 public List<Week> findAllWeek() {
+		 return weekRepository.findAll();
+	 }
 }
