@@ -1,5 +1,6 @@
 package search.entity;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 import javax.persistence.Column;
@@ -11,11 +12,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import search.entity.Dancer;
-
+import search.entity.Studio;
+import search.entity.Week;
 
 @Entity
 @Table(name="search")
-public class Search {
+public class Search implements Serializable {
 	
 	//I was considering using Lombok due to the lengthy code, but it didn't work.
 	@Id
@@ -65,21 +67,41 @@ public class Search {
 		this.team = team;
 	}
 	
-	@Column(name="studio")
-	private String studio;
-	public String getStudio() {
+	@Column(name="studio_id")
+	private String studioId;
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name="studio_id", insertable = false, updatable = false )
+	private Studio studio;
+	public String getStudioId() {
+		return studioId;
+	}
+	public void setStudioId(String studioId) {
+		this.studioId = studioId;
+	}
+	
+	public Studio getStudio() {
 		return studio;
 	}
-	public void setStudio(String studio) {
+	public void serStudio(Studio studio) {
 		this.studio = studio;
 	}
 	
-	@Column(name="week")
-	private String week;
-	public String getWeek() {
+	@Column(name="week_id")
+	private String weekId;
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name="week_id", insertable = false, updatable = false )
+	private Week week;
+	public String getWeekId() {
+		return weekId;
+	}
+	public void setWeekId(String weekId) {
+		this.weekId = weekId;
+	}
+	
+	public Week getWeek() {
 		return week;
 	}
-	public void setWeek(String week) {
+	public void serWeek(Week week) {
 		this.week = week;
 	}
 	
