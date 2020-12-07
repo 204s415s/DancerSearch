@@ -7,7 +7,7 @@
     <link th:href="@{/css/stylesheet.css}" rel="stylesheet">
   </head>
   <body>
-    <form method="get" name="form1" th:action="@{/index/search}">
+    <form method="get" name="form1" th:action="@{/index/search}" th:object="${form}">
     <h3>レッスン検索</h3>
       <table class="search">
         <tr>
@@ -21,27 +21,15 @@
         
         <tr>
           <th>スタジオ名</th>
-          <td><label><input type="radio" class="form-control" name="studio" th:value="STUDIO-Ash"/>STUDIO-Ash</label>
-              <label><input type="radio" class="form-control" name="studio" th:value="FRESH+' '+DANCE+' '+STUDIO"/>FRESH DANCE STUDIO</label>
-              <label><input type="radio" class="form-control" name="studio" th:value="STUDIO+' ' +Alleyoop"/>STUDIO Alleyoop</label>
-              <label><input type="radio" class="form-control" name="studio" th:value="DANCE+' '+SCHOOL+' '+LAB3"/>DANCE SCHOOL LAB3</label>
-              <label><input type="radio" class="form-control" name="studio" th:value="STUDIO+' '+AX"/>STUDIO AX</label>
-              <label><input type="radio" class="form-control" name="studio" th:value="E-N+' '+DANCE+' '+SCHOOL+' '+STUDIO"/>E-N DANCE SCHOOL STUDIO</label>
-              <label><input type="radio" class="form-control" name="studio" th:value="STUDIO+' '+SUNNY+' '+HOOD"/>STUDIO SUNNY HOOD</label>
-              <label><input type="radio" class="form-control" name="studio" th:value="CAMURO+' '+DANCE+' '+STUDIO"/>CAMURO DANCE STUDIO</label>
-              <label><input type="radio" class="form-control" name="studio" th:value="DANCE+' '+STUDIO+' '+OSCAR"/>DANCE STUDIO OSCAR</label>
+          <td>
+            <label th:each="data : ${stu}"><input type="radio" class="form-control" name="studio" th:value="${data.studio}" th:text="${data.studio}" th:field="*{studio}"/></label>
           </td>
         </tr>
         
         <tr>
           <th>曜日</th>
-          <td><label><input type="radio" class="form-control" id="week" name="week" th:value="月曜日"/>月曜日</label>
-              <label><input type="radio" class="form-control" id="week" name="week" th:value="火曜日"/>火曜日</label>
-              <label><input type="radio" class="form-control" id="week" name="week" th:value="水曜日"/>水曜日</label>
-              <label><input type="radio" class="form-control" id="week" name="week" th:value="木曜日"/>木曜日</label>
-              <label><input type="radio" class="form-control" id="week" name="week" th:value="金曜日"/>金曜日</label>
-              <label><input type="radio" class="form-control" id="week" name="week" th:value="土曜日"/>土曜日</label>
-              <label><input type="radio" class="form-control" id="week" name="week" th:value="日曜日"/>日曜日</label>
+          <td>
+            <label th:each="data2 : ${we}"><input type="radio" class="form-control" name="week" th:value="${data2.week}" th:text="${data2.week}" th:field="*{week}"/></label>
           </td>
         </tr>
         
