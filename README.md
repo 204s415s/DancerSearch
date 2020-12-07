@@ -40,7 +40,7 @@ Spring BootとMySQLを用いた、簡単な検索が出来るWebアプリケー�
 ## テストデータ
 サンプルデータの構成は以下のようになっています。  
 ・データベース: sample_db  
-・テーブル: search, dancer  
+・テーブル: search, dancer, studio, week  
 ・ユーザー: test_user  
 
 また、サンプルデータを作成するsqlは src/main/resources/sample に入れてあります。
@@ -57,8 +57,8 @@ searchテーブル
 |dancer_code|文字列|dancerテーブルと連携|
 |dancer|文字列|ダンサー名|
 |team|文字列|チーム名|
-|studio|文字列|スタジオ名|
-|week|文字列|レッスン曜日|
+|studio_id|整数|studioテーブルと連携|
+|week_id|文字列|weekテーブルと連携|
 |start|整数|レッスン開始時間|
 |close|整数|レッスン終了時間|
 |level|文字列|クラス|
@@ -71,6 +71,22 @@ dancerテーブル
 |name|文字列|ダンサー名|
 |team|文字列|チーム名|
 |movie|文字列|動画(Youtube)のリンク|
+
+studioテーブル
+|列名|データ・タイプ|詳細|
+|---|---|---|
+|studio_id|整数|searchテーブルと連携|
+|studio|文字列|スタジオ名|
+
+
+weekテーブル
+|列名|データ・タイプ|詳細|
+|---|---|---|
+|week_id|整数|searchテーブルと連携|
+|week|文字列|曜日|
+
+
+
 
 ## 実行
 MySQLサーバーを起動した状態で、  
