@@ -23,6 +23,7 @@
           <th>スタジオ名</th>
           <td>
             <label th:each="data : ${stu}"><input type="radio" class="form-control" name="studio" th:value="${data.studio}" th:text="${data.studio}" th:field="*{studio}"/></label>
+            <button type="button" onclick="studioDeselection()">選択解除</button>
           </td>
         </tr>
      
@@ -30,6 +31,7 @@
           <th>曜日</th>
           <td>
            <label th:each="data2 : ${we}"><input type="radio" class="form-control" name="week" th:value="${data2.week}" th:text="${data2.week}" th:field="*{week}"/></label>
+           <button type="button" onclick="weekDeselection()">選択解除</button>
           </td>
         </tr>
         
