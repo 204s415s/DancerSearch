@@ -74,7 +74,8 @@
   }
   /*検索条件*/
   .search label {
-    white-space: nowrap;
+    border-collapse: collapse;
+    display:inline-block;
   }
   .search table {
     width: auto;
